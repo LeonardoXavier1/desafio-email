@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviador de E-mail</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <header>
+
+        
+            <img src="img/logo-email.png" alt="">
+    
+        
+    
+        
+    </header>
+    <hr class="linha">
+
+    <section class="caixa">
+        <div class="box">
+            <form method="POST" action="back.php" id="form">
+                      <input type="text" name="destinatario" id='destinatario'  placeholder="Destinatário:">
+                      <input type="text" name="assunto" id='assunto' placeholder="Assunto:">
+                      <input class="cp" type="text" name="corpo" id='corpo' placeholder="Corpo do E-mail:">
+                     <button class="button" id="submitBtn" type="submit" name="bt" style="vertical-align: middle;"><span>Enviar</span></button>
+                     
+            </form>
+
+        </div>
+
+   
+
+    </section>        
+
+    <hr class="linha">
+
+    <footer class="Créditos" class="">
+        <div class="container"> 
+            <button class="bi">
+                <p><a href="https://github.com/LeonardoXavier1" target="_blank">GitHub</a></p>
+                <svg stroke-width="4" stroke="currentColor" viewBox="0 0 24 24" fill="none" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 5l7 7m0 0l-7 7m7-7H3" stroke-linejoin="round" stroke-linecap="round"></path>
+                </svg>
+            </button>
+        </div>
+    </footer>
+    <script src="js/javascript.js"></script>
+    <script src="js/sweetalert.js"></script>
+    <!-- <script src="js/custom.js"></script> -->
+</body>
+</html>

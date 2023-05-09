@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    font-family: sans-serif;
+    background-color: #0d0341;
+  }
+  
+  header img {
+    width: 20%;
+    display: flex;
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
+  
+  header {
+    background-color: #07e4ca9b;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  ::placeholder {
+    color: #f8f8f8;
+  }
+  
+  /* ----------------- BOX ----------------------- */
+  .caixa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .box {
+    margin-bottom: 10vh;
+    position: relative;
+    width: 29%;
+    height: 40vh;
+    color: #fff;
+    background-color: #0d0341;
+    font: 700;
+    line-height: 40vh;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-transform: uppercase;
+    border-radius: 20px;
+    font-size: 2vh;
+  }
+  
+  .box::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: calc(100% + 30px);
+    height: calc(100% + 30px);
+    top: -15px;
+    left: -15px;
+    background: rgba(80, 3, 90, 0.432);
+    background: linear-gradient(24deg, #f60707 0%, #f807f89b 100%);
+    background-size: 300%;
+    animation: border 20s linear infinite;
+  }
+  
+  .box::after {
+    filter: blur(17px);
+  }
+  
+  @keyframes border {
+    0%,
+    100% {
+      background-position: 0 0;
+    }
+    5% {
+      background-position: 300%;
+    }
+  }
+  
+  /* ----------------- INPUT  &&& BOTAO---------------------- */
+  input[type="text"],
+input[type="email"] {
+  margin-left: 5%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  width: 90%;
+  max-width: 400px;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover {
+  border: 3px solid #07e4ca9b;
+}
+
+.cp {
+  height: 10vh;
+  width: 90%;
+  max-width: 400px;
+}
+
+input::placeholder {
+  text-align: center;
+}
+
+input {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 2vh;
+  margin-top: 4vh;
+  margin-left: 5%;
+  color: #fafafa;
+  border-radius: 5px;
+  height: 6vh;
+  background: #171616;
+  display: block;
+  margin-bottom: 10px;
+}
+
+  
+  /* --------------- FOOTER ------------------------ */
+.Créditos {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+   background-color: #07e4ca9b;
+    color: #000000;
+    text-align: center;
+}
+
+.Créditos .container {
+  margin-left: 5%;
+  width: 90%;
+  max-width: 400px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.Créditos .col img {
+  width: 100%;
+  display: relative;
+}
+
+.Créditos a {
+  color: #f7f8ffd0;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.Créditos a:hover {
+  color: #f7f8ffd0;
+}
+
+/* --------------- BOTAO ------------------------ */
+.bi {
+    padding: 0;
+    margin-left: 25%;
+    border: none;
+    background: none;
+  }
+  
+  .bi {
+    --primary-color: #111;
+    --hovered-color: #0d0341;
+    position: relative;
+    display: flex;
+    font-weight: 600;
+    font-size: 2vw;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  .bi p {
+    margin: 0;
+    position: relative;
+    font-size: 2vw;
+    color: var(--primary-color)
+  }
+  
+  .bi::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    left: 0;
+    bottom: -0.35vw;
+    background: var(--hovered-color);
+    height: 0.1vw;
+    transition: 0.3s ease-out;
+  }
+  
+  .bi p::before {
+    position: absolute;
+    content: "GitHub";
+    width: 0%;
+    inset: 0;
+    color: var(--hovered-color);
+    overflow: hidden;
+    transition: 0.3s ease-out;
+  }
+  
+  .bi:hover::after {
+    width: 100%;
+  }
+  
+  .bi:hover p::before {
+    width: 100%;
+  }
+  
+  .bi:hover svg {
+    transform: translateX(0.4vw);
+    color: var(--hovered-color)
+  }
+  
+  .bi svg {
+    color: var(--primary-color);
+    transition: 0.2s;
+    position: relative;
+    width: 1.5vw;
+    transition-delay: 0.2s;
+  }
+  
+
+/* */
+button {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2vh;
+    position: relative;
+    width: 15vw;
+    height: 5vh;
+    border-radius: 10vh;
+    border-radius: 5px;
+    background: #171616;
+    color: #fafafa;
+    animation: border 1s linear infinite;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: 'E-mail ?';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -10px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 6.6vw;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+/* --------------- message ------------------------ */
+
+
+
+
+
+
+
+/*
+
+.info{
+
+    position: relative;
+    width: 259px;
+    height: 130px;
+    margin-left: 100px;
+    color: #fff;
+    background-color: #000;
+    text-align: center;
+    font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-transform: uppercase;
+    border-radius: 10px;
+    font-size: 15px;
+    animation: border 20s linear infinite;
+    background: rgb(0, 0, 0);
+
+}
+.info::after{
+
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: calc(100% + 30px);
+    height: calc(100% + 30px);
+    top: -15px;
+    left: -15px;
+    background: rgb(23,22,22);
+    background: linear-gradient(24deg, rgba(23,22,22,1) 0%, rgba(230, 230, 7, 0.608) 100%);
+    background-size: 300%;
+    animation: border 20s linear infinite;
+    filter: blur(50px);
+
+}
