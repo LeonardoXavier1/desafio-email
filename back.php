@@ -1,5 +1,7 @@
 <?php
 
+
+//chama as id do front
 if (isset($_POST['destinatario'], $_POST['assunto'], $_POST['corpo'])) {
     $destinatario = $_POST['destinatario'];
     $assunto = $_POST['assunto'];
@@ -14,6 +16,8 @@ require_once ("src/Exception.php");
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+
+//php mailer envia o email
 
 try {
     $mail = new PHPMailer(true);
@@ -31,12 +35,12 @@ try {
     $mail->Body = $corpo;
     
     if($mail->send()) {
-        $response = array('message' => 'E-mail enviado com sucesso para ' . $destinatario . '!');
+        $response =  array ('message' => 'E-mail enviado com sucesso para ' . $destinatario . '!');
       } else {
-        $response = array('message' => 'Erro ao enviar o e-mail.');
+        // $response =  'Erro ao enviar o e-mail.';
       }
     } catch (Exception $e){
-      $response = array('message' => 'Ótimo, parece que você preenchou todos os campos, pórem o campo destinatário precisa ter um email válido.');
+      $response = array ('message' => 'Ótimo, parece que você preenchou todos os campos, pórem o campo destinatário precisa ter um email válido.');
     }
   
     echo json_encode($response);

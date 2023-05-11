@@ -4,6 +4,7 @@ const assunto = document.getElementById('assunto');
 const corpo = document.getElementById('corpo');
 const responseDiv = document.getElementById('response');
 
+/*------------------------------------------------------------------------------------------------------------------------*/
 
 // destinatario.addEventListener('input', function() {
 //   const email = destinatario.value;
@@ -15,33 +16,35 @@ const responseDiv = document.getElementById('response');
 //     destinatario.setCustomValidity('');
 //   }
 // });
+/*------------------------------------------------------------------------------------------------------------------------*/
 
-
-function handleResponse(response) {
-    if (response) {
-      response.json().then(function(data) {
-        Swal.fire("Sucesso", data.message, "success");
-      });
-    } else {
-      console.log("Erro na solicitação:", response.status);
-      Swal.fire("Ops", "Preencha todos os campos corretamente", "error");
-    }
+//recebe erros do catch
+function respostaSoli(response) {                                                          
+    if (response) {                                                                        
+      response.json().then(function(data) {                                                
+        Swal.fire("Sucesso", data.message, "success");                                     
+      });                                                                                  
+    } else {                                                                               
+      //  Swal.fire("Ops", "Por favor preencha corretamente", "error");                  
+    }                                                                                      
   }
 
 function handleSubmit(event) {
     event.preventDefault();
-    Swal.fire("Enviando...", "Aguarde enquanto o e-mail está sendo enviado.", "info");
 
     const destinatarioValue = destinatario.value;
     const assuntoValue = assunto.value;
     const corpoValue = corpo.value;
+
   // Verificar se algum campo está em branco
+
   if (!destinatarioValue || !assuntoValue || !corpoValue) {
     Swal.fire("Aviso", "Por favor, preencha todos os campos.", "warning");
     return;
   }
 
   // Exibir mensagem de envio
+
   Swal.fire("Enviando...", "Aguarde enquanto o e-mail está sendo enviado.", "info");
     const formData = new FormData();
     formData.append('destinatario', destinatarioValue);
@@ -52,7 +55,7 @@ function handleSubmit(event) {
       method: 'POST',
       body: formData
     })
-      .then(handleResponse)
+      .then(respostaSoli)
       .catch(function(error) {
         console.log('Ocorreu um erro na solicitação:', error);
       });
@@ -65,6 +68,7 @@ submitBtn.addEventListener('click', handleSubmit);
 
 
 
+/*------------------------------------------------------------------------------------------------------------------------*/
 
 
 // const form = document.getElementById('form')
@@ -85,3 +89,4 @@ submitBtn.addEventListener('click', handleSubmit);
 //     })
 
 // })
+/*------------------------------------------------------------------------------------------------------------------------*/
